@@ -3,6 +3,7 @@
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
 set -x SHELL /usr/bin/fish
+set -U fish_user_paths /home/sd/.local/share/nvm/v22.22.0/bin
 
 # Use bat for man pages
 set -xU MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -165,19 +166,6 @@ alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'
 #    fastfetch --config neofetch.jsonc
 # end
 
-# export NVM_DIR="$HOME/.config/nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# pnpm
-# export PNPM_HOME="/home/sd/.local/share/pnpm"
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-# pnpm end
-
-
 alias pn="corepack pnpm"
 alias pnx="corepack pnpx"
 alias npm="corepack npm"
@@ -189,8 +177,8 @@ alias pns="corepack pnpm start"
 alias update-pkg="pnr ncu --interactive --format group"
 
 # dotfiles
-alias ff='cd ~/.dotfiles/'
-alias vv='cd ~/.dotfiles/vimbtw/.config/nvim/'
+alias ff='cd ~/.garuda-dotfiles/'
+alias vv='cd ~/.garuda-dotfiles/vimbtw/.config/nvim/'
 
 # run http-server
 alias run-server="pnx http-server "

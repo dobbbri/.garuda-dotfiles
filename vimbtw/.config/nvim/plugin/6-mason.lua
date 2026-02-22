@@ -8,7 +8,8 @@ local mr = require("mason-registry")
 mr.refresh(function()
   local ensure_installed = {
     "astro-language-server",
-    "bash-language-server",
+    -- "bash-language-server",
+    "fish-lsp",
     "json-lsp",
     "biome", --"prettier",
     "shfmt",
