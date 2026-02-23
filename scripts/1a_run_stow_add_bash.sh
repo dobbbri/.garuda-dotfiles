@@ -33,5 +33,8 @@ echo "-------"
 stow astro
 stow vimbtw
 
+mv ~/.config/starship*.toml ~/.config/bkp
+stow starship
+
 cd ~
 

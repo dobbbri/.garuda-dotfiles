@@ -10,7 +10,6 @@
  * Keyframes
  * -------------------------------------------------------------------------- */
 
-
 /*
 Polar Night
 nord0  #2e3440
@@ -41,139 +40,150 @@ nord15 #b48ead
 /* Reset all styles */
 
 * {
-    color: #eceff4;
-    border: 0;
-    border-radius: 0;
-    padding: 0 0;
-    font-family:Symbols Nerd Font Mono;
-    font-size: 14px;
-    margin-right: 5px;
-    margin-left: 5px;
-   }
+  color: #eceff4;
+  border: 0;
+  border-radius: 20px;
+  padding: 1px 3px;
+  font-family: Symbols Nerd Font Mono;
+  font-size: 15px;
+  margin: 0;
+}
 
 window#waybar {
-    background:rgba (0, 0, 0, 0.65);
-    border-radius: 20px 20px 20px 20px;
+  background: rgba(0, 0, 0, 0.65);
+  /* border-radius: 20px 20px 20px 20px; */
 }
 
 #workspaces button {
-    padding: 2px 0px;
-    color: #eceff4;
-    border-color: #d8dee9;
+  color: #eceff4;
 }
 
 #workspaces button.active {
-   background: rgba(129, 161, 193, 0.45);
+  background: #d08770;
 }
 
-#clock, #battery, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #tray, #window,#custom-launcher,#custom-power,#custom-updates ,#custom-network_traffic,#custom-weather{
-    padding: 0 3px;
+#clock,
+#battery,
+#cpu,
+#memory,
+#idle_inhibitor,
+#temperature,
+#custom-keyboard-layout,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#window,
+#custom-launcher,
+#custom-power,
+#custom-updates,
+#custom-network_traffic,
+#custom-weather {
+  padding: 0 8px;
 }
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
 
+#clock {
+  color: #a3be8c;
+}
 
+#backlight {
+  color: #ebcb8b;
+}
+
+#battery {
+  color: #d8dee9;
+}
+
+/* #battery.charging { */
+/*   color: #81a1c1; */
+/* } */
+
+/* @keyframes blink { */
+/*   to { */
+/*     color: #4c566a; */
+/*     background-color: #eceff4; */
+/*   } */
+/* } */
+
+/* #battery.critical:not(.charging) { */
+/*   background: #bf616a; */
+/*   color: #eceff4; */
+/*   animation-name: blink; */
+/*   animation-duration: 0.5s; */
+/*   animation-timing-function: linear; */
+/*   animation-iteration-count: infinite; */
+/*   animation-direction: alternate; */
+/* } */
+
+#cpu {
+  color: #a3be8c;
+}
+
+#memory {
+  color: #d3869b;
+}
+
+#network.disabled {
+  color: #bf616a;
+}
+
+#network {
+  color: #a3be8c;
+}
+
+#network.disconnected {
+  color: #bf616a;
+}
+
+#pulseaudio {
+  color: #b48ead;
+}
+
+#pulseaudio.muted {
+  color: #e20548;
+}
+
+#temperature {
+  color: #8fbcbb;
+}
+
+#temperature.critical {
+  color: #bf616a;
+}
+
+#idle_inhibitor {
+  color: #ebcb8b;
+}
 
 #tray {
 }
 
-
-
-#custom-power{
-    border-style: hidden;
-    margin-top:2px;
+#custom-launcher {
+  color: #88c0d0;
+/*   font-size: 20px; */
+/*   background-image: url("/home/sd/.config/waybar/launcher.png"); */
+/*   background-position: center; */
+/*   background-repeat: no-repeat; */
+/*   background-size: contain; */
+/*   border-style: hidden; */
 }
 
-#window{
-    border-style: hidden;
-    margin-top:1px;
-}
-/*
- * 
-#custom-launcher{
-        font-size: 13px;
-        background-image: url('/home/sd/.config/waybar/launcher.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        border-style: hidden;
+#custom-power {
+  border-style: hidden;
+  margin-top: 2px;
 }
 
-#clock {
- color:#a3be8c;
+#window {
+  border-style: hidden;
+  margin-top: 1px;
 }
-
-#backlight {
-    color: #ebcb8b;
+#custom-keyboard-layout {
+  color: #88c0d0;
 }
-
-#battery {
-    color: #d8dee9;
+#custom-network_traffic {
+  color: #d08770;
 }
-
-#battery.charging {
-    color: #81a1c1;
-}
-
-@keyframes blink {
-    to {
-        color: #4c566a;
-        background-color: #eceff4;
-    }
-}
-
-#battery.critical:not(.charging) {
-    color: #eceff4;
-}
-
-#cpu {
-    color:#a3be8c ;
-}
-
-#memory {
-    color: #d3869b;
-}
-
-#network.disabled {
-    color:#bf616a;
-}
-
-#network{
-    color:#a3be8c;
-}
-
-#network.disconnected {
-    color: #bf616a;
-}
-
-#pulseaudio {
-    color: #b48ead;
-}
-
-#pulseaudio.muted {
-    color: #e20548;
-}
-
-#temperature {
-    color: #8fbcbb;
-}
-
-#temperature.critical {
-    color: #bf616a;
-}
-
-#idle_inhibitor {
-   color: #ebcb8b;
-}
-
-#custom-keyboard-layout{
-   color:#d08770;
-}
-#custom-network_traffic{
-   color:#d08770;
-}
-*/
-
-

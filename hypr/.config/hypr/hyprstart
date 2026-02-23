@@ -6,13 +6,14 @@ cd ~
 export XCURSOR_SIZE=24
 
 # text editor
-export MICRO_TRUECOLOR=1
+# export MICRO_TRUECOLOR=1
+# export EDITOR=/usr/bin/micro
 export EDITOR=/usr/bin/geany
 
 #browser
-export BROWSER=firefox
+export BROWSER=firedragon
 #terminal
-export TERM=alacritty
+export TERM=foot
 #mail
 export MAIL=thunderbird
 
