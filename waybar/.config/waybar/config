@@ -8,7 +8,7 @@
 
   "modules-left": ["custom/launcher",  "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["custom/keyboard-layout", "custom/updates", "memory", "cpu", "pulseaudio", "network", "idle_inhibitor", "clock","custom/power"],
+  "modules-right": ["custom/keyboard-layout", "memory", "cpu", "pulseaudio", "network", "idle_inhibitor", "clock","custom/power"],
 
  // Modules configuration
 
@@ -73,17 +73,6 @@
       "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
       "tooltip-format-ethernet": "󰈀 {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
       "on-click": "nm-connection-editor"
-    },
-    "custom/updates": {
-      "format": "{icon} {}",
-      "return-type": "json",
-      "format-icons": {
-        "has-updates": "󱍷",
-        "updated": "󰂪",
-      },
-      "exec-if": "which waybar-module-pacman-updates",
-      "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 7200 --network-interval-seconds",
-      "on-click": "foot -e update"
     },
     "custom/power": {
       "format":" ",
