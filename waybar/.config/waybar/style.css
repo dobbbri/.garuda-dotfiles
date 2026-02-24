@@ -42,7 +42,7 @@ nord15 #b48ead
 * {
   color: #eceff4;
   border: 0;
-  border-radius: 20px;
+  border-radius: 0;
   padding: 1px 3px;
   font-family: Symbols Nerd Font Mono;
   font-size: 15px;
@@ -51,7 +51,6 @@ nord15 #b48ead
 
 window#waybar {
   background: rgba(0, 0, 0, 0.65);
-  /* border-radius: 20px 20px 20px 20px; */
 }
 
 #workspaces button {
@@ -174,12 +173,12 @@ window#waybar {
 
 #custom-power {
   border-style: hidden;
-  margin-top: 2px;
+  /* margin-top: 2px; */
 }
 
 #window {
   border-style: hidden;
-  margin-top: 1px;
+  /* margin-top: 1px; */
 }
 #custom-keyboard-layout {
   color: #88c0d0;
