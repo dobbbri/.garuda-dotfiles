@@ -3,26 +3,11 @@ vim.pack.add({
 }, { confirm = false })
 
 require("slimline").setup({
-  style = "bg",
+  style = "fg",
   bold = false,
-  sep = {
-    hide = {
-      first = false, -- hides the first separator of the line
-      last = false, -- hides the last separator of the line
-    },
-  },
   configs = {
-    git = {
-      hl = { primary = "Function" },
-    },
-    path = {
-      hl = { primary = "Label" },
-    },
     diagnostics = {
       icons = { ERROR = " ", WARN = "󰀨 ", INFO = " ", HINT = "󰠠 " },
-    },
-    filetype_lsp = {
-      hl = { primary = "String" },
     },
   },
   components = {
@@ -37,4 +22,4 @@ require("slimline").setup({
   },
 })
 
--- vim.cmd("highlight Slimline guibg=#000000")
+vim.cmd("highlight Slimline guibg=#000000")
