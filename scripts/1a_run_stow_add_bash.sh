@@ -2,17 +2,11 @@
 
 echo "Stow ---------------------------------------------------------------"
 
-# sudo pacman -S hyprpaper
-sudo pacman -Sy stow firefox bitwarden ttf-jetbrains-mono-nerd
-yay -S waypapery
+sudo pacman -Sy stow firefox bitwarden ttf-jetbrains-mono-nerd hyprpaper
 echo "-------"
 
 cd ~/.garuda-dotfiles
 mkdir -p ~/.config/bkp
-echo "-------"
-
-mv ~/.config/waypaper/ ~/.config/bkp/waypaper
-stow waypaper
 echo "-------"
 
 mv ~/.config/waybar ~/.config/bkp/waybar
