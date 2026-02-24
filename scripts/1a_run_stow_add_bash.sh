@@ -3,11 +3,13 @@
 echo "Stow ---------------------------------------------------------------"
 
 # sudo apt install -y eza stow starship
-sudo pacman -Sy stow firefox bitwarden
-
+sudo pacman -Sy stow firefox bitwarden ttf-jetbrains-mono-nerd
+yay -S waypapery
+echo "-------"
 
 cd ~/.garuda-dotfiles
 mkdir -p ~/.config/bkp
+mkdir -p ~/.bkp
 echo "-------"
 
 mv ~/.config/waybar ~/.config/bkp/waybar
@@ -30,11 +32,12 @@ mv ~/.config/alacritty ~/.config/bkp/alacritty
 stow alacritty
 echo "-------"
 
-stow astro
-stow vimbtw
-
 mv ~/.config/starship*.toml ~/.config/bkp
 stow starship
+echo "-------"
+
+stow astro
+stow vimbtw
 
 cd ~
 
