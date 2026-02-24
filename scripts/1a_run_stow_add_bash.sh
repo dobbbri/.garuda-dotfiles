@@ -2,14 +2,17 @@
 
 echo "Stow ---------------------------------------------------------------"
 
-# sudo apt install -y eza stow starship
+# sudo pacman -S hyprpaper
 sudo pacman -Sy stow firefox bitwarden ttf-jetbrains-mono-nerd
 yay -S waypapery
 echo "-------"
 
 cd ~/.garuda-dotfiles
 mkdir -p ~/.config/bkp
-mkdir -p ~/.bkp
+echo "-------"
+
+mv ~/.config/waypaper/ ~/.config/bkp/waypaper
+stow waypaper
 echo "-------"
 
 mv ~/.config/waybar ~/.config/bkp/waybar
