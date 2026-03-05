@@ -9,8 +9,8 @@ sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 nvim -v
 
 echo "- Install Neovim - languages --------------------------------------------"
-sudo pacman -Sy python3 go rust cargo ripgrep lua51 luarocks
-sudo pacman -Sy wget stow lua51 python-pip python3 python-pynvim
+sudo pacman -S python3 go rust cargo ripgrep lua51 luarocks
+sudo pacman -S wget stow lua51 python-pip python3 python-pynvim
 
 #pip
 pip install neovim vim-vint --break-system-packages
@@ -21,7 +21,7 @@ pip install neovim vim-vint --break-system-packages
 sudo ln -s /usr/bin/python3 /usr/bin/python
 
 echo "- fix neovim clipboard -------------------------------------------------"
-sudo pacman -Sy xsel xclip
+sudo pacman -S xsel xclip
 
 echo "- Install NPM packages --------------------------------------------------"
 npm i -g neovim tree-sitter-cli

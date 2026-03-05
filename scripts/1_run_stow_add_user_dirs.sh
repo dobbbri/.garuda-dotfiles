@@ -2,7 +2,7 @@
 
 echo "Stow ---------------------------------------------------------------"
 
-sudo pacman -Sy stow pamac tumbler bitwarden ttf-jetbrains-mono-nerd hyprpaper
+sudo pacman -S stow tumbler bitwarden ttf-jetbrains-mono-nerd hyprpaper
 echo "-------"
 
 cd ~/.garuda-dotfiles
@@ -34,7 +34,17 @@ stow starship
 echo "-------"
 
 stow astro
+stow fzfc
+stow geany
+stow Thunar
 stow vimbtw
 
 cd ~
+
+echo "Updating user directories..."
+mkdir -p ~/Sites/ || echo "Warning: Failed to create Sites directory."
+mkdir -p ~/Dev/ || echo "Warning: Failed to create Dev directory."
+mkdir -p ~/Projetos/ || echo "Warning: Failed to create Dev directory."
+
+echo "User directories updated."
 

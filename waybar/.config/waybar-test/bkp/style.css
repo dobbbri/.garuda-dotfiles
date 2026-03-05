@@ -46,10 +46,9 @@ nord15 #b48ead
     border-radius: 0;
     padding: 0 0;
     font-family:Symbols Nerd Font Mono;
-    font-size: 15px;
+    font-size: 14px;
     margin-right: 5px;
     margin-left: 5px;
-    padding-bottom:2px;
    }
 
 window#waybar {
@@ -59,7 +58,6 @@ window#waybar {
 
 #workspaces button {
     padding: 2px 0px;
-    border-bottom: 2px;
     color: #eceff4;
     border-color: #d8dee9;
     border-style: solid;
