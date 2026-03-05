@@ -5,4 +5,4 @@
 # Shut down the whole stack of Docker applications gracefully and clean up the resources back to the initial state.
 
 # Example:
-docker-compose down --volumes
+sudo docker-compose down --volumes

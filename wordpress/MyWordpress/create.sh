@@ -5,5 +5,5 @@
 # This starts and sets up the specified Docker services to make a cohesive application stack.
 
 # Example:
-docker-compose up -d
+sudo docker-compose up -d
 

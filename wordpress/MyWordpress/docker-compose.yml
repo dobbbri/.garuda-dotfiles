@@ -28,6 +28,7 @@ services:
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
     volumes:
       - wp_data:/var/www/html
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     networks:
       - wordpress_network
 
