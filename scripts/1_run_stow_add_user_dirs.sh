@@ -2,7 +2,9 @@
 
 echo "Stow ---------------------------------------------------------------"
 
-sudo pacman -S stow tumbler bitwarden ttf-jetbrains-mono-nerd hyprpaper
+sudo pacman -S stow tumbler bitwarden hyprpaper
+sudo pacman -R blueman wofi wpaperd emote
+
 echo "-------"
 
 cd ~/.garuda-dotfiles
