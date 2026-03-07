@@ -19,13 +19,8 @@
 
   "group/center2": {
     "orientation": "inherit",
-    "modules": [
-      "clock",
-      "custom/idle-indicator",
-      // "custom/notification-silencing-indicator",
-      "custom/screenrecording-indicator",
-      "custom/update"
-    ]
+    "modules": ["clock", "idle_inhibitor", "custom/update"]
+
   },
 
   "group/center3": {
@@ -79,7 +74,7 @@
 
   "custom/omarchy": {
     "format": "<span size='12500'></span>",
-    "on-click-right": "xdg-terminal-exec",
+    "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
     "tooltip-format": "Garuda Menu\n\nSuper + Shift + D"
   },
 
@@ -98,9 +93,9 @@
   },
 
   "clock": {
-    "format": " {:%H:%M • %a, %d/%m}     ",
+    "format": " {:%H:%M • %d/%m} ",
     "format-alt": "{:%A, %d %B %Y}   ",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
 
   "network": {
@@ -172,13 +167,6 @@
     "tooltip": false
   },
 
-  // "custom/screenrecording-indicator": {
-  //   "on-click": "omarchy-cmd-screenrecord",
-  //   "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
-  //   "signal": 8,
-  //   "return-type": "json"
-  // },
-
   "tray": {
     "icon-size": 16,
     "spacing": 8
@@ -202,30 +190,29 @@
     "tooltip": false
   },
 
-  "custom/idle_indicator": {
+  "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": ""
+      "activated": " ",
+      "deactivated": " "
     },
     "on-click": "exec ~/.config/hypr/scripts/idle_inhibitor.sh"
   },
 
   "custom/update": {
-    "format": "",
-    // "format": "{} {icon}",
+    "format": "{icon}",
     "return-type": "json",
-    // "format-icons": {
-    //   "has-updates": "",
-    //   "updated": ""
-    // },
+    "format-icons": {
+      "has-updates": "",
+      "updated": ""
+    },
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates --interval-seconds 60 --network-interval-seconds 7200 --network-interval-seconds",
     "on-click": "foot -e update"
   },
 
   "custom/power": {
-    "format": " ",
+    "format": "<span size='12500'></span>",
     "on-click": "nwgbar",
     "tooltip": false
   }

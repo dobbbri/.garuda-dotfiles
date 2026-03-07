@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-MAX_TITLE_LEN=20
+MAX_TITLE_LEN=38
 
 print_status() {
     window=$(hyprctl activewindow -j 2>/dev/null)
