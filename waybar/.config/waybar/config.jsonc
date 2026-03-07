@@ -19,13 +19,12 @@
 
   "group/center2": {
     "orientation": "inherit",
-    "modules": ["clock", "idle_inhibitor", "custom/update"]
-
+    "modules": ["clock", "custom/update"]
   },
 
   "group/center3": {
     "orientation": "inherit",
-    "modules": ["cpu", "memory", "custom/separator#blank", "custom/media"]
+    "modules": ["cpu", "memory"]
   },
 
   "group/right1": {
@@ -36,7 +35,7 @@
       "custom/separator#dot",
       "custom/separator#blank",
       "pulseaudio",
-      // "bluetooth",
+      "idle_inhibitor",
       "network",
       "battery",
       "custom/power"
@@ -44,6 +43,11 @@
   },
 
   // MODULES
+
+  "hyprland/window": {
+    "max-length": 50,
+    "separate-outputs": true
+  },
 
   "custom/active_window": {
     "exec": "~/.config/waybar/window.sh",
@@ -93,8 +97,8 @@
   },
 
   "clock": {
-    "format": " {:%H:%M • %d/%m} ",
-    "format-alt": "{:%A, %d %B %Y}   ",
+    "format": " {:%H:%M} ",
+    "format-alt": " {:%A, %d %B %Y} ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
 
@@ -132,15 +136,6 @@
     "on-click": "omarchy-menu power"
   },
 
-  // "bluetooth": {
-  //   "format": "<span size='11500'>󰂯</span>",
-  //   "format-disabled": "<span size='11500'>󰂲</span>",
-  //   "format-connected": "<span size='11500'></span>",
-  //   "format-no-controller": "",
-  //   "tooltip-format": "Devices connected: {num_connections}",
-  //   "on-click": "omarchy-launch-bluetooth"
-  // },
-
   "pulseaudio": {
     "format": "<span size='11500'>{icon}</span>",
     "tooltip-format": "Playing at {volume}%",
@@ -172,11 +167,11 @@
     "spacing": 8
   },
 
-  "custom/media": {
-    "exec": "title=$(playerctl metadata title 2>/dev/null); if [ -n \"$title\" ]; then echo \"  ${title:0:25} \"; else echo \"         No media           \"; fi",
-    "interval": 2,
-    "on-click": "playerctl play-pause"
-  },
+  // "custom/media": {
+  //   "exec": "title=$(playerctl metadata title 2>/dev/null); if [ -n \"$title\" ]; then echo \"  ${title:0:25} \"; else echo \"         No media           \"; fi",
+  //   "interval": 2,
+  //   "on-click": "playerctl play-pause"
+  // },
 
   "custom/separator#blank": {
     "format": " ",
