@@ -1,0 +1,232 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 35,
+  "border-radius": 25,
+  "margin-right": 10,
+  "margin-left": 10,
+  "margin-top": 2,
+
+  // MODULES
+
+  "modules-left": ["custom/omarchy", "custom/active_window"],
+  "modules-center": ["group/center3", "hyprland/workspaces", "group/center2"],
+  "modules-right": ["group/right1"],
+
+  // GROUPS MODULE
+
+  "group/center2": {
+    "orientation": "inherit",
+    "modules": [
+      "clock",
+      "custom/idle-indicator",
+      // "custom/notification-silencing-indicator",
+      "custom/screenrecording-indicator",
+      "custom/update"
+    ]
+  },
+
+  "group/center3": {
+    "orientation": "inherit",
+    "modules": ["cpu", "memory", "custom/separator#blank", "custom/media"]
+  },
+
+  "group/right1": {
+    "orientation": "inherit",
+    "modules": [
+      "tray",
+      "custom/separator#blank",
+      "custom/separator#dot",
+      "custom/separator#blank",
+      "pulseaudio",
+      // "bluetooth",
+      "network",
+      "battery",
+      "custom/power"
+    ]
+  },
+
+  // MODULES
+
+  "custom/active_window": {
+    "exec": "~/.config/waybar/window.sh",
+    "return-type": "json",
+    "markup": true
+  },
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": "",
+      "urgent": "",
+      "empty": ""
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": []
+    }
+  },
+
+  "custom/omarchy": {
+    "format": "<span size='12500'></span>",
+    "on-click-right": "xdg-terminal-exec",
+    "tooltip-format": "Garuda Menu\n\nSuper + Shift + D"
+  },
+
+  "cpu": {
+    "interval": 2,
+    "format": "{icon} ",
+    "format-icons": ["󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+    "on-click": "foot -e htop"
+  },
+
+  "memory": {
+    "interval": 2,
+    "format": "{icon} ",
+    "format-icons": ["󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+    "on-click": "foot -e htop"
+  },
+
+  "clock": {
+    "format": " {:%H:%M • %a, %d/%m}     ",
+    "format-alt": "{:%A, %d %B %Y}   ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "<span size='11500'>󰌘</span>",
+    "format-disconnected": "<span size='11500'>󰤮</span>",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "nm-connection-editor"
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{icon}",
+    "format-charging": "{icon}",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "on-click": "omarchy-menu power"
+  },
+
+  // "bluetooth": {
+  //   "format": "<span size='11500'>󰂯</span>",
+  //   "format-disabled": "<span size='11500'>󰂲</span>",
+  //   "format-connected": "<span size='11500'></span>",
+  //   "format-no-controller": "",
+  //   "tooltip-format": "Devices connected: {num_connections}",
+  //   "on-click": "omarchy-launch-bluetooth"
+  // },
+
+  "pulseaudio": {
+    "format": "<span size='11500'>{icon}</span>",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "default": [" ", " ", " "]
+    },
+    "on-click-right": "footclient -T waybar_alsamixer -e alsamixer -M",
+    "on-click": "pavucontrol"
+  },
+
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": ["custom/expand-icon", "tray"]
+  },
+
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false
+  },
+
+  // "custom/screenrecording-indicator": {
+  //   "on-click": "omarchy-cmd-screenrecord",
+  //   "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
+  //   "signal": 8,
+  //   "return-type": "json"
+  // },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+
+  "custom/media": {
+    "exec": "title=$(playerctl metadata title 2>/dev/null); if [ -n \"$title\" ]; then echo \"  ${title:0:25} \"; else echo \"         No media           \"; fi",
+    "interval": 2,
+    "on-click": "playerctl play-pause"
+  },
+
+  "custom/separator#blank": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+
+  "custom/separator#dot": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+
+  "custom/idle_indicator": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "on-click": "exec ~/.config/hypr/scripts/idle_inhibitor.sh"
+  },
+
+  "custom/update": {
+    "format": "",
+    // "format": "{} {icon}",
+    "return-type": "json",
+    // "format-icons": {
+    //   "has-updates": "",
+    //   "updated": ""
+    // },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 60 --network-interval-seconds 7200 --network-interval-seconds",
+    "on-click": "foot -e update"
+  },
+
+  "custom/power": {
+    "format": " ",
+    "on-click": "nwgbar",
+    "tooltip": false
+  }
+}

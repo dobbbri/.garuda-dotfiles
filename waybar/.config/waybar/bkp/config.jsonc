@@ -120,10 +120,10 @@
        "return-type": "json",
        "format-icons": {
            "has-updates": "󱍷",
-           "updated": "󰂪",
+           "updated": "󰂪i",
        },
        "exec-if": "which waybar-module-pacman-updates",
-       "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 7200 --network-interval-seconds",
+       "exec": "waybar-module-pacman-updates --interval-seconds 60 --network-interval-seconds 7200 --network-interval-seconds",
        "on-click": "foot -e update"
    },
     "custom/power": {

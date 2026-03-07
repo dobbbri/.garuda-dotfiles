@@ -36,12 +36,7 @@ if test -d ~/Applications/depot_tools
     end
 end
 
-## Starship prompt
-if status --is-interactive
-   source ("/usr/bin/starship" init fish --print-full-init | psub)
-end
-
-## Functions
+# Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
 function __history_previous_command
   switch (commandline -t)
@@ -258,3 +253,13 @@ function neovim-install
   echo "- Install Neovim nighly ---------------------------------------------"
   neovim-update
 end
+
+if test -f ~/.config/themes/colors.fish
+  source ~/.config/themes/colors.fish
+end
+
+## Starship prompt
+# if status --is-interactive
+#    # source ("/usr/bin/starship" init fish --print-full-init | psub)
+# end
+
